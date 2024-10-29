@@ -4,6 +4,6 @@ export interface InterfaceProduct {
     price: number,
     discountPrice: number,
     image: string,
-    isOnSale: boolean,
+    isOnOffer: boolean,
     isOnFavorites: boolean
 } 

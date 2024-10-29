@@ -1,16 +1,17 @@
 .card {
     position: relative;
-    width: calc(33% - 50px);
-    height: 380px;
+    height: 450px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
     cursor: pointer;
     border: 0px;
-    box-shadow: 0 1px 2px rgba(0 0 0 / 20%);
+    box-shadow: 0 1px 2px darkgray;
 
     &:hover {
-        box-shadow: 0 1px 6px rgba(0 0 0 / 40%);
+        box-shadow: 0 1px 3px dimgray;
+        transform: scale(1.1);
+        transition: transform ease 0.6s;
     }
 
     .card-img-top {
@@ -27,11 +28,11 @@
         .old-price {
             text-decoration: line-through;
             font-size: 0.9em;
-            color: grey;
+            color: red;
         }
 
         .sale-price {
-            color: red;
+            color: orange;
             margin-left: 10px;
         }
     }
@@ -39,7 +40,7 @@
         position: absolute;
         top: 20px;
         right: 20px;
-        background-color: whitesmoke;
+        background-color: rgba(245, 245, 245, 0.704);
         border-radius: 50%;
         font-size: 1rem;
         padding: 15px;
@@ -47,17 +48,17 @@
     }
 
     .isLiked {
-        color: #ff4d4d;
+        color: red;
     }
 }
 
-.sale-badge {
+.badge {
     position: absolute; 
     top: 20px; 
     border-radius: 0 5px 5px 0;
     left: 0; 
-    background-color: rgb(37, 37, 37); 
-    color: whitesmoke; 
+    background-color: rgba(255, 166, 0, 0.792); 
+    color: white; 
     padding: 5px 20px;  
     z-index: 1;
 }

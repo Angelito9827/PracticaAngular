@@ -1,59 +1,21 @@
-<div class="container" *ngIf="product">
-  <div class="card">
-    <span> Offer </span>
-    <img [src]="product.image" class="card-img-top" />
-    <div class="card-body">
-      <div>
-        <h4 class="card-title">
-          {{ product.name }}
-        </h4>
-        <label class="_addtoFav">
-          <input type="checkbox" name="favourite" class="d-none" />
-          <i
-            [ngClass]="{
-              'fa-solid isLiked': product.isOnFavorites,
-              'fa-regular': !product.isOnFavorites
-            }"
-          >
-          </i>
-        </label>
-      </div>
-      <div class="card-text">
-        <span>Free Shipping</span>
-        <span [ngClass]="{ 'old-price': product.isOnSale }">
-          {{ product.discountPrice | currency : "EUR" }}
-          <span *ngIf="product.isOnSale" class="sale-price">
-            {{ product.discountPrice | currency : "EUR" }}
-          </span>
-        </span>
-      </div>
+<div
+  class="card"
+  style="width: 18rem"
+  *ngIf="product"
+  (click)="navigateToProductDetails(product.id)"
+>
+  <div class="badge" *ngIf="product.isOnOffer">OFFER</div>
+  <img [src]="product.image" class="card-img-top" alt="{{ product.image }}" />
+  <div class="card-body">
+    <h5 class="card-title">{{ product.name }}</h5>
+    <div class="card-text">
+      <span>Free Shipping</span>
+      <span [ngClass]="{'old-price': product.isOnOffer}">
+        {{ product.price | currency: 'EUR' }}
+      </span>
+      <span *ngIf="product.isOnOffer" class="sale-price">{{ product.price | currency: 'EUR' }}
+      </span>
     </div>
+    <i class="fa-heart heart-icon" [ngClass]="{'fa-solid isLiked': product.isOnFavorites, 'fa-regular': !product.isOnFavorites}"></i>
   </div>
 </div>
-
-<!-- <div class="card" style="width: 18rem" *ngIf="product">
-  <img
-    [src]="product.image"
-    class="card-img-top"
-    alt="imagen de {{ product.name }}"
-  />
-  <div class="card-body">
-    <div *ngIf="product.isOnSale" class="sale-badge">SALE</div>
-    <h5 class="card-title">{{ product.name }}</h5>
-    <p class="card-text">
-      <span [ngClass]="{ 'old-price': product.isOnSale }">
-        {{ product.price | currency : "EUR" }}
-      </span>
-      <span *ngIf="product.isOnSale" class="sale-price">
-        {{ product.discountPrice | currency : "EUR" }}
-      </span>
-    </p>
-    <i
-      class="fa-heart heart-icon"
-      [ngClass]="{
-        'fa-solid isLiked': product.isOnFavorites,
-        'fa-regular': !product.isOnFavorites
-      }"
-    ></i>
-  </div>
-</div> -->
