@@ -1,2 +1,21 @@
-<p>product-card works!</p>
-<h2>{{idProduct}}</h2>
+<div
+  class="card"
+  style="width: 18rem"
+  *ngIf="product"
+  (click)="navigateToProductDetails(product.id)"
+>
+  <div class="badge" *ngIf="product.isOnOffer">OFFER</div>
+  <img [src]="product.image" class="card-img-top" alt="{{ product.image }}" />
+  <div class="card-body">
+    <h5 class="card-title">{{ product.name }}</h5>
+    <div class="card-text">
+      <span>Free Shipping</span>
+      <span [ngClass]="{'old-price': product.isOnOffer}">
+        {{ product.price | currency: 'EUR' }}
+      </span>
+      <span *ngIf="product.isOnOffer" class="sale-price">{{ product.price | currency: 'EUR' }}
+      </span>
+    </div>
+    <i class="fa-heart heart-icon" [ngClass]="{'fa-solid isLiked': product.isOnFavorites, 'fa-regular': !product.isOnFavorites}"></i>
+  </div>
+</div>
