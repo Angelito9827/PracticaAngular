@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, Input } from '@angular/core';
+import { InterfaceProduct } from '../models/interaface-product.model';
 
 @Component({
   selector: 'app-product-card',
@@ -7,13 +7,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './product-card.component.scss'
 })
 export class ProductCardComponent {
-  idProduct?: number;
-
-  constructor(private route: ActivatedRoute) {}
+  @Input() product?: InterfaceProduct;
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params) => {
-      this.idProduct = Number(params.get('idProduct')) ?? 0;
-    });
+  
   }
+  
 }
