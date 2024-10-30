@@ -1,0 +1,17 @@
+.navbar-nav {
+
+    .nav-item {
+        margin-left: 50px;
+        
+    }
+} 
+
+button{
+    border: 1px solid white;
+    color: white;
+
+    &:hover {
+        color: orange;
+        background-color: white;
+    }
+}
