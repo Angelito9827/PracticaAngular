@@ -1,2 +1,36 @@
-<p>product-details works!</p>
-<h2>{{idProduct}}</h2>
+<div class="container-fluid">
+  <div class="container-left">
+    <img [src]="product?.image" alt="{{ product?.image }}" />
+  </div>
+  <div class="container-right">
+    <div class="card-title">
+      <h2>
+        {{ product?.name }}
+      </h2>
+      <div class="rating">
+        <i [ngClass]="(product?.rating || 0) >= 1 ? 'fa-solid fa-star' : 'fa-regular fa-star'"></i>
+        <i [ngClass]="(product?.rating || 0) >= 2 ? 'fa-solid fa-star' : 'fa-regular fa-star'"></i>
+        <i [ngClass]="(product?.rating || 0) >= 3 ? 'fa-solid fa-star' : 'fa-regular fa-star'"></i>
+        <i [ngClass]="(product?.rating || 0) >= 4 ? 'fa-solid fa-star' : 'fa-regular fa-star'"></i>
+        <i [ngClass]="(product?.rating || 0) >= 5 ? 'fa-solid fa-star' : 'fa-regular fa-star'"></i>
+        <a class="link-opacity-25-hover" href="#">{{product?.rating}}/5 {{product?.opinions}} opiniones</a>
+      </div>
+    </div>
+    <div class="card-text">
+      <div class="price">
+        <span class="badge" *ngIf="product?.isOnOffer">OFFER</span>
+        <span [ngClass]="{ 'old-price': product?.isOnOffer }">
+          {{ product?.price | currency : "EUR" }}
+        </span>
+        <span *ngIf="product?.isOnOffer" class="sale-price"
+          >{{ product?.price | currency : "EUR" }}
+        </span>
+      </div>
+      <span id="shipping">Free Shipping</span>
+    </div>
+    <div class="buttons">
+      <button type="button" class="btn btn-outline-warning">ADD TO CART</button>
+      <button type="button" class="btn btn-outline-warning">WISH LIST</button>
+    </div>
+  </div>
+</div>
