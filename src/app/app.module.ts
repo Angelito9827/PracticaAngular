@@ -8,6 +8,8 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ShopByComponent } from "./categories/components/shop-by/shop-by.component";
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { CarouselComponent } from './home/carousel/carousel.component';
+import { BannerComponent } from './home/banner/banner.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    CarouselComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,
