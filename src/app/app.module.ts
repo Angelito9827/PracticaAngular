@@ -10,6 +10,7 @@ import { ShopByComponent } from "./categories/components/shop-by/shop-by.compone
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { CarouselComponent } from './home/carousel/carousel.component';
 import { BannerComponent } from './home/banner/banner.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { BannerComponent } from './home/banner/banner.component';
     FooterComponent,
     HomeComponent,
     CarouselComponent,
-    BannerComponent
+    BannerComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
