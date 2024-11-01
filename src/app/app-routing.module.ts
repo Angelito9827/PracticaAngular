@@ -5,7 +5,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 
 const routes: Routes = [
     { path: '', component:HomeComponent},
-    { path: 'categories', loadChildren: () => import('./categories/categories.module').then(m => m.CategoriesModule) },
+    { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
     { path: 'about', component:AboutUsComponent}
 ];
 
