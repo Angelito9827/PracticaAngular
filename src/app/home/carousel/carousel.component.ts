@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { InterfaceCarousel } from '../models/inteface-carousel.model';
-import { HomeService } from '../service/home-services.service';
+import { ProductService } from '../../categories/service/product.service';
 
 @Component({
   selector: 'app-carousel',
@@ -10,14 +10,14 @@ import { HomeService } from '../service/home-services.service';
 export class CarouselComponent {
   images: string[] = [];
 
-  constructor(private service: HomeService) {}
+  constructor(private service: ProductService) {}
   
   ngOnInit(): void {
     this.getCarouselImages();
   }
 
   private getCarouselImages() {
-    this.service.getCarouselImages().subscribe(
+    this.service.getBlackFridayPromotionImages().subscribe(
       (data: InterfaceCarousel) => {
         this.images = [data.image1, data.image2, data.image3];
       }

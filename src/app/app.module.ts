@@ -11,6 +11,7 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
 import { CarouselComponent } from './home/carousel/carousel.component';
 import { BannerComponent } from './home/banner/banner.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { CategoriesModule } from './categories/categories.module';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ShopByComponent
+    ShopByComponent,
+    CategoriesModule
 ],
   providers: [
     provideClientHydration(),

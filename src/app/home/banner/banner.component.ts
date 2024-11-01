@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { InterfaceBanner } from '../models/interface-banner.model';
-import { HomeService } from '../service/home-services.service';
+import { ProductService } from '../../categories/service/product.service';
 
 @Component({
   selector: 'app-banner',
@@ -10,14 +10,14 @@ import { HomeService } from '../service/home-services.service';
 export class BannerComponent {
   images: string[] = [];
 
-  constructor(private service: HomeService) {}
+  constructor(private service: ProductService) {}
 
   ngOnInit(): void {
     this.getBannerImages();
   }
 
   private getBannerImages() {
-    this.service.getBannerImages().subscribe(
+    this.service.getBestSellerImages().subscribe(
       (data: InterfaceBanner) => {
         this.images = [data.image1, data.image2, data.image3];
       }
