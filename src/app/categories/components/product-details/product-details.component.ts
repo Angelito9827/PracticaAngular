@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { InterfaceDetails } from '../models/interface-details.model';
+import { InterfaceProduct } from '../models/interface-product.model';
 import { ProductService } from '../../service/product.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ProductService } from '../../service/product.service';
   styleUrl: './product-details.component.scss',
 })
 export class ProductDetailsComponent {
-  product?: InterfaceDetails;
+  product?: InterfaceProduct;
 
   constructor(private route: ActivatedRoute, private service: ProductService) {}
 
@@ -17,7 +17,7 @@ export class ProductDetailsComponent {
     const idProduct = Number(this.route.snapshot.paramMap.get('idProduct'));
     this.service
       .getProductDetails(idProduct)
-      .subscribe((data: InterfaceDetails) => {
+      .subscribe((data: InterfaceProduct) => {
         this.product = data;
       });
   }

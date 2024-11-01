@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { InterfaceProduct } from '../models/interaface-product.model';
+import { InterfaceProductList } from '../models/interface-product-list.model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrl: './product-card.component.scss'
 })
 export class ProductCardComponent {
-  @Input() product?: InterfaceProduct;
+  @Input() product?: InterfaceProductList;
 
   constructor(
     private router : Router
@@ -20,7 +20,7 @@ export class ProductCardComponent {
   }
 
   navigateToProductDetails(idProduct: number) {
-    this.router.navigate(["/categories/products/",idProduct])
+    this.router.navigate(["/products/",idProduct])
   }
   
 }

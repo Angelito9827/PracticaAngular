@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { InterfaceProduct } from '../components/models/interaface-product.model';
+import { InterfaceProductList } from '../components/models/interface-product-list.model';
 import { InterfaceCategories } from '../components/models/interface-categories.model';
-import { InterfaceDetails } from '../components/models/interface-details.model';
+import { InterfaceProduct } from '../components/models/interface-product.model';
 import { InterfaceCarousel } from '../../home/models/inteface-carousel.model';
 import { InterfaceBanner } from '../../home/models/interface-banner.model';
 
@@ -16,14 +16,14 @@ export class ProductService {
     private http: HttpClient
   ) { }
 
-  public getProducts(): Observable<InterfaceProduct[]> {
+  public getProducts(): Observable<InterfaceProductList[]> {
     const urlEndPoint: string = "http://localhost:3002/products";
-    return this.http.get<InterfaceProduct[]>(urlEndPoint);
+    return this.http.get<InterfaceProductList[]>(urlEndPoint);
   }
 
-  public getProductDetails(idProduct: number): Observable<InterfaceDetails> {
+  public getProductDetails(idProduct: number): Observable<InterfaceProduct> {
     const urlEndPoint: string = `http://localhost:3002/products/${idProduct}`;
-    return this.http.get<InterfaceDetails>(urlEndPoint);
+    return this.http.get<InterfaceProduct>(urlEndPoint);
   }
 
   public getCategories():Observable<InterfaceCategories[]>{

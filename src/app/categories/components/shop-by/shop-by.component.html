@@ -1,6 +1,6 @@
 <h1>Shop By Category</h1>
 <div class="container">
-    <div class="card" *ngFor="let categories of categories" [routerLink]="['/categories',categories.id]">
+    <div class="card" *ngFor="let categories of categories" [routerLink]="['/products/categories',categories.id]">
             <img [src]="categories.image" class="image">
         <h2 class="card-title">{{categories.name}}</h2>
     </div>
