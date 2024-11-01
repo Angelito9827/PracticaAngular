@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CarouselService } from '../service/carousel-service/carousel.service';
 import { InterfaceCarousel } from '../models/inteface-carousel.model';
+import { HomeService } from '../service/home-services.service';
 
 @Component({
   selector: 'app-carousel',
@@ -10,7 +10,7 @@ import { InterfaceCarousel } from '../models/inteface-carousel.model';
 export class CarouselComponent {
   images: string[] = [];
 
-  constructor(private service: CarouselService) {}
+  constructor(private service: HomeService) {}
   
   ngOnInit(): void {
     this.getCarouselImages();

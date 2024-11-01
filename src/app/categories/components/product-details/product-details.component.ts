@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { InterfaceDetails } from '../models/interface-details.model';
-import { DetailsService } from '../../service/product-details-service/details.service';
+import { ProductService } from '../../service/product.service';
 
 @Component({
   selector: 'app-product-details',
@@ -11,12 +11,12 @@ import { DetailsService } from '../../service/product-details-service/details.se
 export class ProductDetailsComponent {
   product?: InterfaceDetails;
 
-  constructor(private route: ActivatedRoute, private service: DetailsService) {}
+  constructor(private route: ActivatedRoute, private service: ProductService) {}
 
   ngOnInit(): void {
     const idProduct = Number(this.route.snapshot.paramMap.get('idProduct'));
     this.service
-      .getDetailsProduct(idProduct)
+      .getProductDetails(idProduct)
       .subscribe((data: InterfaceDetails) => {
         this.product = data;
       });
