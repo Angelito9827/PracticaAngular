@@ -6,12 +6,12 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { ShopByComponent } from "./categories/components/shop-by/shop-by.component";
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { CarouselComponent } from './home/carousel/carousel.component';
 import { BannerComponent } from './home/banner/banner.component';
 import { AboutUsComponent } from './about-us/about-us.component';
-import { CategoriesModule } from './categories/categories.module';
+import { ShopByComponent } from './products/components/shop-by/shop-by.component';
+import { ProductsModule } from './products/products.module';
 
 
 @NgModule({
@@ -28,7 +28,7 @@ import { CategoriesModule } from './categories/categories.module';
     BrowserModule,
     AppRoutingModule,
     ShopByComponent,
-    CategoriesModule
+    ProductsModule
 ],
   providers: [
     provideClientHydration(),

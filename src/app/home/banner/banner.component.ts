@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { InterfaceBanner } from '../models/interface-banner.model';
-import { ProductService } from '../../categories/service/product.service';
+import { ProductService } from '../../products/service/product.service';
 
 @Component({
   selector: 'app-banner',
