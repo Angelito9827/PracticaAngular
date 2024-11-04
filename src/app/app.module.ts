@@ -12,6 +12,7 @@ import { BannerComponent } from './home/banner/banner.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ShopByComponent } from './products/components/shop-by/shop-by.component';
 import { ProductsModule } from './products/products.module';
+import { BestSellerProductsComponent } from './products/components/best-seller-products/best-seller-products.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ProductsModule } from './products/products.module';
     BrowserModule,
     AppRoutingModule,
     ShopByComponent,
-    ProductsModule
+    ProductsModule,
+    BestSellerProductsComponent
 ],
   providers: [
     provideClientHydration(),

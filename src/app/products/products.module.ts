@@ -6,6 +6,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { provideHttpClient } from '@angular/common/http';
+import { BestSellerProductsComponent } from './components/best-seller-products/best-seller-products.component';
 
 
 @NgModule({

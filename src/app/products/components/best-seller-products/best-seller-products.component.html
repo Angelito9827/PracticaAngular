@@ -1,0 +1,24 @@
+<div class="card" style="width: 18rem" *ngIf="bestSellerProduct">
+  <div class="badge" *ngIf="bestSellerProduct.isOnOffer">OFFER</div>
+  <img
+    [src]="bestSellerProduct.image"
+    class="card-img-top"
+    alt="{{ bestSellerProduct.image }}"
+  />
+  <div class="card-body">
+    <div class="card-title">
+      <h5>{{ bestSellerProduct.name }}</h5>
+    </div>
+    <div class="card-text">
+      <span>Free Shipping</span>
+      <div class="prices">
+        <span [ngClass]="{ 'old-price': bestSellerProduct.isOnOffer }">
+          {{ bestSellerProduct.price | currency : "EUR" }}
+        </span>
+        <span *ngIf="bestSellerProduct.isOnOffer" class="sale-price"
+          >{{ bestSellerProduct.price | currency : "EUR" }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

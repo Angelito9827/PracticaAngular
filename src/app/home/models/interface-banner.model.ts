@@ -1,5 +1,8 @@
 export interface InterfaceBanner {
-    image1: string,
-    image2: string,
-    image3: string
+    id: number,
+    name: string,
+    price: number,
+    discountPrice: number,
+    image: string,
+    isOnOffer: boolean,
 }
