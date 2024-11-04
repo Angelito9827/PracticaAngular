@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { InterfaceBanner } from '../models/interface-banner.model';
 import { ProductService } from '../../products/service/product.service';
 
@@ -8,18 +8,20 @@ import { ProductService } from '../../products/service/product.service';
   styleUrl: './banner.component.scss'
 })
 export class BannerComponent {
-  images: string[] = [];
+  @Input() product?: InterfaceBanner;
+  bestSellerProducts: InterfaceBanner[] = [];
 
-  constructor(private service: ProductService) {}
+  constructor(
+    private service: ProductService) {}
 
   ngOnInit(): void {
-    this.getBannerImages();
+    this.getBestSellerProducts();
   }
 
-  private getBannerImages() {
-    this.service.getBestSellerImages().subscribe(
-      (data: InterfaceBanner) => {
-        this.images = [data.image1, data.image2, data.image3];
+  private getBestSellerProducts() {
+    this.service.getBestSellerProducts().subscribe(
+      (data: InterfaceBanner[]) => {
+        this.bestSellerProducts = data;
       }
     );
   }

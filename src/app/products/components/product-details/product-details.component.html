@@ -13,7 +13,7 @@
         <i [ngClass]="(product?.rating || 0) >= 3 ? 'fa-solid fa-star' : 'fa-regular fa-star'"></i>
         <i [ngClass]="(product?.rating || 0) >= 4 ? 'fa-solid fa-star' : 'fa-regular fa-star'"></i>
         <i [ngClass]="(product?.rating || 0) >= 5 ? 'fa-solid fa-star' : 'fa-regular fa-star'"></i>
-        <a class="link-opacity-25-hover" href="#">{{product?.rating}}/5 {{product?.opinions}} opiniones</a>
+        <a class="link-opacity-25-hover" style="cursor: pointer;">{{product?.rating}}/5 {{product?.opinions}} opiniones</a>
       </div>
     </div>
     <div class="card-text">

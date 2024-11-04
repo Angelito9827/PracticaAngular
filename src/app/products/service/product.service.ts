@@ -36,9 +36,9 @@ export class ProductService {
     return this.http.get<InterfaceCarousel>(urlEndPoint);
   }
 
-  public getBestSellerImages(): Observable<InterfaceBanner> {
+  public getBestSellerProducts(): Observable<InterfaceBanner[]> {
     const urlEndPoint: string = "http://localhost:3002/products/best-seller";
-    return this.http.get<InterfaceBanner>(urlEndPoint);
+    return this.http.get<InterfaceBanner[]>(urlEndPoint);
   }
 
 }

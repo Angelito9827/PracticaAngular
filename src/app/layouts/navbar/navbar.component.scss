@@ -1,3 +1,7 @@
+nav{
+    background-color: orange;
+}
+
 .navbar-nav {
 
     .nav-item {
@@ -7,11 +11,11 @@
 } 
 
 button{
-    border: 1px solid white;
-    color: white;
+    border: 1px solid black;
 
     &:hover {
-        color: orange;
-        background-color: white;
+        color: white;
+        background-color: orange;
+        border: 1px solid white;
     }
 }

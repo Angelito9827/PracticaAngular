@@ -9,7 +9,7 @@
     box-shadow: 0 1px 2px darkgray;
 
     &:hover {
-        box-shadow: 0 1px 3px dimgray;
+        box-shadow: 1px 2px 3px dimgray;
     }
 
     .card-img-top {
@@ -22,16 +22,29 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-
-        .old-price {
-            text-decoration: line-through;
-            font-size: 0.9em;
-            color: red;
-        }
-
-        .sale-price {
-            color: orange;
-            margin-left: 10px;
+        justify-content: space-between;
+        
+        .card-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            .prices {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                
+                .old-price {
+                    text-decoration: line-through;
+                    font-size: 0.9em;
+                    color: red;
+                }
+                
+                .sale-price {
+                    color: orange;
+                    margin-left: 10px;
+                }
+            }
         }
     }
     .heart-icon {
@@ -42,12 +55,6 @@
         border-radius: 50%;
         font-size: 1rem;
         padding: 15px;
-
-        &:hover {
-            transform: scale(1.1);
-            transition: transform ease 0.2s;
-            background-color: rgb(245, 245, 245);
-        }
 
     }
 
